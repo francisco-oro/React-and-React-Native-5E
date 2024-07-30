@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 type ThemeContextType = {
   theme: string;
@@ -9,7 +9,7 @@ const ThemeContext = React.createContext<ThemeContextType | undefined>(
   undefined
 );
 
-const ThemeProvider: React.FC = ({ children }) => {
+const ThemeProvider: React.FC = ({ children }: {children: ReactNode}) => {
   const [theme, setTheme] = React.useState("light");
 
   return (

@@ -1,20 +1,17 @@
-import React from "react";
+import React, { useRef } from 'react'
 
 const InputWithRef = () => {
-  const inputRef = React.useRef<HTMLInputElement>(null);
-
+  const inputRef = useRef<HTMLInputElement>(null);
+  
   const focusInput = () => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  };
-
+    inputRef.current?.focus();
+  }
   return (
     <div>
-      <input ref={inputRef} type="text" />
-      <button onClick={focusInput}>Focus the input</button>
+      <input type="text" ref={inputRef} />
+      <button onClick={focusInput}>Focus Input</button>
     </div>
-  );
-};
+  )
+}
 
-export default InputWithRef;
+export default InputWithRef

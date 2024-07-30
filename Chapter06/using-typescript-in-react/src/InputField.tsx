@@ -1,13 +1,16 @@
-import React from "react";
+import React, { ChangeEvent, useState } from 'react'
 
 const InputField = () => {
-  const [value, setValue] = React.useState("");
+  const [value, setValue] = useState("");
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => { 
     setValue(event.target.value);
   };
 
-  return <input value={value} onChange={handleChange} />;
-};
+  
+  return (
+    <input value={value} onChange={handleChange} />
+  )
+}
 
-export default InputField;
+export default InputField

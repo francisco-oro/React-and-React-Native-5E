@@ -13,9 +13,7 @@ function MyButton(props) {
     fetchData().then(() => {
       console.log("callback", e.currentTarget.style);
     });
-  }
-
-  return <button onClick={onClick}>{props.children}</button>;
+  }  return <button onClick={onClick}>{props.children}</button>;
 }
 
 export default MyButton;

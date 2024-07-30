@@ -9,7 +9,7 @@ function App() {
       setTimeout(() => {
         resolve({ id: 1, name: "Mike" });
       }, 1000);
-    });
+    });  
   }, []);
 
   React.useEffect(() => {
