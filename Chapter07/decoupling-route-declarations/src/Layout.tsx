@@ -1,6 +1,7 @@
-import { Link, Outlet } from "react-router-dom";
+import React from 'react'
+import { Link, Outlet } from 'react-router-dom'
 
-function Layout() {
+const Layout = () => {
   return (
     <main>
       <nav>
@@ -10,9 +11,9 @@ function Layout() {
         <span> | </span>
         <Link to="/two">Two</Link>
       </nav>
-      <Outlet />
+      <Outlet/>
     </main>
-  );
+  )
 }
 
-export default Layout;
+export default Layout

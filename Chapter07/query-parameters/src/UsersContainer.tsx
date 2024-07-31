@@ -1,21 +1,24 @@
-import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
-import Users from "./Users";
-import { SortOrder, fetchUsers } from "./api";
+import React, { useEffect, useState } from 'react'
+import { useSearchParams } from 'react-router-dom';
+import { fetchUsers, SortOrder } from './api';
+import Users from './Users';
 
-function UsersContainer() {
+const UsersContainer = () => {
   const [users, setUsers] = useState<string[]>([]);
   const [search] = useSearchParams();
 
-  useEffect(() => {
+  useEffect(() => { 
     const order = search.get("order") as SortOrder;
 
     fetchUsers(order).then((users) => {
-      setUsers(users);
+      setUsers(users)
     });
   }, [search]);
 
-  return <Users users={users} />;
+
+  return (
+    <Users users={users}/>
+  )
 }
 
-export default UsersContainer;
+export default UsersContainer

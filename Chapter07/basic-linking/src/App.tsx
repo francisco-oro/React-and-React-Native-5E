@@ -10,15 +10,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/first",
-        element: <First />,
+        element: <First />
       },
       {
         path: "/second",
-        element: <Second />,
-      },
-    ],
-  },
-]);
+        element: <Second />
+      }
+    ]
+  }
+])
 
 function App() {
   return <RouterProvider router={router} />;
