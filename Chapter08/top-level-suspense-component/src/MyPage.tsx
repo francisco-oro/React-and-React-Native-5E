@@ -1,14 +1,13 @@
-import * as React from "react";
+import React, { lazy } from 'react'
 
-const MyFeature = React.lazy(() => import("./MyFeature"));
-
-function MyPage() {
+const MyFeature = lazy(() => import('./MyFeature'));
+const MyPage = () => {
   return (
     <>
-      <h1>My Page</h1>
-      <MyFeature />
+    <div>MyPage</div>
+    <MyFeature/>
     </>
-  );
+  )
 }
 
-export default MyPage;
+export default MyPage
