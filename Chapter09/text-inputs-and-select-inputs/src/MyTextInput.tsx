@@ -1,15 +1,17 @@
+import { TextField } from "@mui/material"
 import { useState } from "react";
-import TextField from "@mui/material/TextField";
 
-export default function MyTextInput() {
-  const [value, setValue] = useState("");
-
+const MyTextInput = () => {
+  const [value, setValue] = useState<string | undefined>("");
+  
   return (
     <TextField
-      label="Name"
-      value={value}
-      onChange={(e) => setValue(e.target.value)}
-      margin="normal"
-    />
-  );
+    label="Name"
+    margin="normal"
+    value={value}
+    onChange={(e) => {setValue(e.target.value)}}
+    /> 
+  )
 }
+
+export default MyTextInput
