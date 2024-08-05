@@ -1,28 +1,28 @@
-import { useEffect, useState } from "react";
-import { GitHubUser } from "./GitHubUser";
+import { useEffect, useState } from "react"
+import { GitHubUser } from "./GitHubUser"
 import UserInfo from "./UserInfo";
 
-function App() {
+const App = () => {
   const [user, setUser] = useState<GitHubUser>();
-  const [loading, setLoading] = useState(true);
+  const[isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    setLoading(true);
-
-    fetch("https://api.github.com/users/sakhnyuk")
-      .then((response) => response.json())
-      .then((data) => setUser(data))
+    setIsLoading(true);    
+    fetch("https://api.github.com/users/francisco-oro")
+      .then(res => res.json())
+      .then((data: GitHubUser) => {
+        setUser(data);
+      })
       .catch((error) => console.log(error))
-      .finally(() => setLoading(false));
+      .finally(() => setIsLoading(false));
   }, []);
-
   return (
     <div>
-      {loading && <p>Loading...</p>}
-      {!loading && !user && <p>No user found.</p>}
+      {isLoading && <p>Loading...</p>}
+      {!isLoading && !user && <p>No user found.</p>}
       {user && <UserInfo user={user} />}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
